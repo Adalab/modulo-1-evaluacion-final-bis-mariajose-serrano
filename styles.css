@@ -16,11 +16,16 @@ body {
 /* HEADER */
 /* ---------------------- */
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   padding: 20px 40px;
   display: flex;
   justify-content: center;
   border-bottom: 1px solid #f0f0f0;
+  background-color: #fff;
+  z-index: 10;
 }
 
 .header__content {
@@ -48,42 +53,155 @@ body {
   color: #00c0a3;
 }
 
+/* ---------------------- */
+/* MAIN */
+/* ---------------------- */
 main {
-  display: block;
-  margin: 0;
-  padding: 0;
+  margin-top: 72px; /* altura aprox. del header */
+  margin-bottom: 56px; /* altura del footer */
+  height: calc(
+    100vh - 72px - 56px
+  ); /* ocupa toda la pantalla menos header y footer */
 }
 
 /* ---------------------- */
 /* HERO SECTION */
 /* ---------------------- */
 .hero {
-  flex-grow: 1;
-  background-color: #b7c4be; /* tono verde-gris como el de la imagen */
-  background-image: url("./adalab-web-starter-kit/docs/images/david-van-dijk-3LTht2nxd34-unsplash.jpg"); /* si tienes la lámpara como imagen separada */
+  position: relative;
+  width: 100%;
+  height: 100%; /* llena todo el espacio disponible en main */
+  background-color: #b7c4be; /* color base */
+  background-image: url("./adalab-web-starter-kit/docs/images/david-van-dijk-3LTht2nxd34-unsplash.jpg");
   background-repeat: no-repeat;
-  background-position: right bottom;
-  background-size: contain;
+  background-position: center bottom;
+  background-size: cover; /* la imagen cubre todo el hero, sin dejar hueco */
   display: flex;
   align-items: center;
-  padding: 100px 40px;
+  padding: 0 40px;
 }
 
 .title {
-  font-size: 48px;
+  font-size: clamp(36px, 7vw, 64px);
   font-weight: 700;
   line-height: 1.2;
   color: #ffffff;
   text-align: left;
+  z-index: 2;
+  position: relative;
 }
 
 /* ---------------------- */
 /* FOOTER */
 /* ---------------------- */
 .footer {
-  text-align: center;
-  padding: 20px 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 56px; /* ajusta según tu diseño */
   background-color: #222;
   color: #bbb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 14px;
+  z-index: 10;
+}
+
+/* ---------------------- */
+/* RESPONSIVE */
+/* ---------------------- */
+/* ---------------------- */
+/* HEADER */
+/* ---------------------- */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #f0f0f0;
+  background-color: #fff;
+  z-index: 10;
+}
+
+.header__content {
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo {
+  height: 25px;
+  width: auto;
+}
+
+.header__nav {
+  display: flex;
+  gap: 20px;
+}
+
+.header__nav a {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.header__nav a:hover {
+  color: #00c0a3;
+}
+
+/* ---------------------- */
+/* MEDIA QUERIES */
+/* ---------------------- */
+
+/* MÓVIL (hasta 600px) */
+@media (max-width: 600px) {
+  .header {
+    padding: 16px 0;
+  }
+
+  .header__content {
+    flex-direction: column; /* apila logo + links */
+    justify-content: center;
+    align-items: center;
+  }
+
+  .header__logo {
+    width: 154.5px;
+    height: 60px;
+    margin-bottom: 8px; /* separa logo de los links */
+  }
+
+  .header__nav {
+    flex-direction: row;
+    gap: 12px;
+  }
+
+  .header__nav a {
+    font-size: 10px; /* pequeño como pides */
+    font-weight: 500;
+    color: #333;
+  }
+}
+
+/* TABLET (entre 600 y 900px) */
+@media (min-width: 601px) and (max-width: 900px) {
+  .header__logo {
+    height: 40px;
+  }
+}
+
+/* DESKTOP (más de 900px) */
+@media (min-width: 901px) {
+  .header__logo {
+    height: 25px;
+  }
 }
