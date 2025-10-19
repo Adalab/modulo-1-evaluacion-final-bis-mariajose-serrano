@@ -1,0 +1,89 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Tipografía global */
+body {
+  font-family: "Rubik", sans-serif;
+  color: #fff;
+  background-color: #ffffff;
+}
+
+/* ---------------------- */
+/* HEADER */
+/* ---------------------- */
+.header {
+  width: 100%;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.header__content {
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo {
+  height: 25px;
+}
+
+.header__nav a {
+  text-decoration: none;
+  color: #333;
+  margin-left: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.header__nav a:hover {
+  color: #00c0a3;
+}
+
+main {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+/* ---------------------- */
+/* HERO SECTION */
+/* ---------------------- */
+.hero {
+  flex-grow: 1;
+  background-color: #b7c4be; /* tono verde-gris como el de la imagen */
+  background-image: url("./adalab-web-starter-kit/docs/images/david-van-dijk-3LTht2nxd34-unsplash.jpg"); /* si tienes la lámpara como imagen separada */
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: contain;
+  display: flex;
+  align-items: center;
+  padding: 100px 40px;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #ffffff;
+  text-align: left;
+}
+
+/* ---------------------- */
+/* FOOTER */
+/* ---------------------- */
+.footer {
+  text-align: center;
+  padding: 20px 0;
+  background-color: #222;
+  color: #bbb;
+  font-size: 14px;
+}
