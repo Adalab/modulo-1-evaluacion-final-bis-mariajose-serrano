@@ -68,7 +68,7 @@ main {
   width: 100%;
   height: 100%; /* llena todo el espacio disponible en main */
   background-color: #b7c4be; /* color base */
-  background-image: url("./adalab-web-starter-kit/docs/images/david-van-dijk-3LTht2nxd34-unsplash.jpg");
+  background-image: url("./images/david-van-dijk-3LTht2nxd34-unsplash.jpg");
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: cover; /* la imagen cubre todo el hero, sin dejar hueco */
